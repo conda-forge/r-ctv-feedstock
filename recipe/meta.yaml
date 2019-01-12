@@ -33,6 +33,8 @@ test:
   commands:
     - $R -e "library('ctv')"  # [not win]
     - "\"%R%\" -e \"library('ctv')\""  # [win]
+    - $R -e "x <- ctv::read.ctv(system.file('ctv', 'Econometrics.ctv', package = 'ctv'))"  # [not win]
+    - "\"%R%\" -e \"x <- ctv::read.ctv(system.file('ctv', 'Econometrics.ctv', package = 'ctv'))\""  # [win]
 
 about:
   home: https://CRAN.R-project.org/package=ctv
