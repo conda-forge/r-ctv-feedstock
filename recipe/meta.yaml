@@ -1,5 +1,4 @@
 {% set version = '0.8-2' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,15 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: ctv_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ctv_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ctv/ctv_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/ctv_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ctv/ctv_{{ version }}.tar.gz
   sha256: 3b2f7708eb1fdfd8124ab1d0499e17b824eb9d427642d166abdb886eececfd76
 
 build:
+  merge_build_host: True  # [win]
+  number: 1001
   noarch: generic
-  number: 1000
 
   rpaths:
     - lib/R/lib/
@@ -24,6 +23,9 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+
+  host:
     - r-base
 
   run:
@@ -42,10 +44,25 @@ about:
   summary: 'Infrastructure for task views to CRAN-style repositories: Querying task views and
     installing the associated packages (client-side tools), generating HTML pages and
     storing task view information in the repository (server-side tools).'
-
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
+    - conda-forge/r
+
+# Package: ctv
+# Version: 0.8-5
+# Date: 2018-05-17
+# Title: CRAN Task Views
+# Authors@R: c(person(given = "Achim", family = "Zeileis", role = c("aut", "cre"), email = "Achim.Zeileis@R-project.org", comment = c(ORCID = "0000-0003-0918-3766")), person(given = "Kurt", family = "Hornik", role = "aut", email = "Kurt.Hornik@R-project.org", comment = c(ORCID = "0000-0003-4198-9911")))
+# Description: Infrastructure for task views to CRAN-style repositories: Querying task views and installing the associated packages (client-side tools), generating HTML pages and storing task view information in the repository (server-side tools).
+# Depends: R (>= 2.13.0), utils
+# Suggests: XML
+# License: GPL-2 | GPL-3
+# NeedsCompilation: no
+# Packaged: 2018-05-17 05:40:02 UTC; zeileis
+# Author: Achim Zeileis [aut, cre] (<https://orcid.org/0000-0003-0918-3766>), Kurt Hornik [aut] (<https://orcid.org/0000-0003-4198-9911>)
+# Maintainer: Achim Zeileis <Achim.Zeileis@R-project.org>
+# Repository: CRAN
+# Date/Publication: 2018-05-17 06:03:43 UTC
