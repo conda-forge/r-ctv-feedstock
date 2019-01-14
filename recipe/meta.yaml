@@ -27,9 +27,11 @@ requirements:
 
   host:
     - r-base
+    - r-xml
 
   run:
     - r-base
+    - r-xml
 
 test:
   commands:
