@@ -25,8 +25,10 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
+    - r-xml
   run:
     - r-base
+    - r-xml
 
 test:
   commands:
