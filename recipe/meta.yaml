@@ -39,7 +39,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ctv
-  license: GPL-2 | GPL-3
+  license: GPL-2.0-or-later
   summary: 'Infrastructure for task views to CRAN-style repositories: Querying task views and
     installing the associated packages (client-side tools), generating HTML pages and
     storing task view information in the repository (server-side tools).'
