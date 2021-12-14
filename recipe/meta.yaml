@@ -1,4 +1,4 @@
-{% set version = '0.8-5' %}
+{% set version = "0.9-0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ctv_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ctv/ctv_{{ version }}.tar.gz
-  sha256: 3714ea29f29bad0ffa1195d20c6363c53d092335be17067012f5c9b51afa864e
+  sha256: 6f82b9e358d6efa00c15b5678218726f8d950b0df275554206ed5250ba900c36
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -40,11 +40,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=ctv
   license: GPL-2.0-or-later
-  summary: 'Infrastructure for task views to CRAN-style repositories: Querying task views and
-    installing the associated packages (client-side tools), generating HTML pages and
-    storing task view information in the repository (server-side tools).'
+  summary: 'Infrastructure for task views to CRAN-style repositories: Querying task views and installing the associated packages (client-side tools), generating HTML pages and storing task view information in the repository (server-side tools).'
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
