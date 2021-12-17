@@ -1,4 +1,4 @@
-{% set version = "0.9-0" %}
+{% set version = "0.9-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ctv_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ctv/ctv_{{ version }}.tar.gz
-  sha256: 6f82b9e358d6efa00c15b5678218726f8d950b0df275554206ed5250ba900c36
+  sha256: 369bb8d4508e39d7f25ea69d4f96c2ab185a2a36034c03070507d479ec290653
 
 build:
   merge_build_host: true  # [win]
