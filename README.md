@@ -1,11 +1,11 @@
-About r-ctv
-===========
+About r-ctv-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ctv-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=ctv
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ctv-feedstock/blob/main/LICENSE.txt)
 
 Summary: Infrastructure for task views to CRAN-style repositories: Querying task views and installing the associated packages (client-side tools), generating HTML pages and storing task view information in the repository (server-side tools).
 
