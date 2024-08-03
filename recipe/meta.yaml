@@ -1,6 +1,5 @@
 {% set version = "0.9-5" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-ctv
@@ -13,8 +12,7 @@ source:
   sha256: a5fc5a6c90fe2da2c6e3d41d45d835a1de5884e494a5cf754657ec56cf3d23d7
 
 build:
-  merge_build_host: true  # [win]
-  number: 1
+  number: 2
   noarch: generic
   rpaths:
     - lib/R/lib/
