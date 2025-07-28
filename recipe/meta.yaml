@@ -1,4 +1,4 @@
-{% set version = "0.9-6" %}
+{% set version = "0.9-7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ctv_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ctv/ctv_{{ version }}.tar.gz
-  sha256: c5550dd5715e556756b5be2a65ac849543c6452863435ee2fdc318bbd9066070
+  sha256: ebaa66dc18fe0cd9ba43164d38d4630dd330d270e731497e948b59480e531335
 
 build:
   number: 0
