@@ -9,6 +9,8 @@ Package license: GPL-2.0-or-later
 
 Summary: Infrastructure for task views to CRAN-style repositories: Querying task views and installing the associated packages (client-side tools), generating HTML pages and storing task view information in the repository (server-side tools).
 
+Development: https://github.com/cran-task-views/ctv/
+
 Current build status
 ====================
 
