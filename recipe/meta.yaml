@@ -3,7 +3,7 @@
 
 package:
   name: r-ctv
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -17,6 +17,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -24,10 +28,8 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-xml2
   run:
     - r-base
-    - r-xml2
 
 test:
   commands:
@@ -38,6 +40,7 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=ctv
+  dev_url: https://github.com/cran-task-views/ctv/
   license: GPL-2.0-or-later
   summary: 'Infrastructure for task views to CRAN-style repositories: Querying task views and installing the associated packages (client-side tools), generating HTML pages and storing task view information in the repository (server-side tools).'
   license_family: GPL3
