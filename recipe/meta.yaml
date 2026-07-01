@@ -3,7 +3,7 @@
 
 package:
   name: r-ctv
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -28,10 +28,8 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-xml2
   run:
     - r-base
-    - r-xml2
 
 test:
   commands:
